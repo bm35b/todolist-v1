@@ -13,9 +13,9 @@ let items = ["Buy Food", "Prepare Food", "Cook Food", "Eat Food"];
 // set an empty array for new work items
 let workItems = ["Sleep in", "Catch Up on Netflix Shows"];
 //set array for fun
-let funItems = ["Beach", "Shopping"];
+let funItems = ["Beach", "Shopping", "Hiking"];
 //set array for weekend
-let weekendItems = ["Sleep in", "Catch up on Netflix Shows"];
+let weekendItems = ["Sleep in", "Catch up on Netflix Shows", "Clean up the House"];
 
 
 
@@ -60,10 +60,10 @@ app.get("/work", function(req, res){
     res.render("list", {listTitle: "Work To Do List", newListItems: workItems})
 });
 app.get("/fun", function(req, res){
-    res.render("list", {listTitle: "Fun To Do List", newListItems: workItems})
+    res.render("list", {listTitle: "Fun To Do List", newListItems: funItems})
 });
 app.get("/weekend", function(req, res){
-    res.render("list", {listTitle: "Weekend To Do List", newListItems: workItems})
+    res.render("list", {listTitle: "Weekend To Do List", newListItems: weekendItems})
 });
 
 app.listen(3000, function() {
