@@ -43,16 +43,22 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
     
     
-    // code allows items to be added to the regular list and work list
+    // code allows items to be added to the regular list and work list added if statements for fun and weekend list
     let item = req.body.newItem;
     
     if (req.body.list === "Work") {
         workItems.push(item);
         res.redirect("/work");
-    } else {
-        items.push(item);
-        res.redirect("/");
     }
+  if (req.body.list === "Fun") {
+        funItems.push(item);
+        res.redirect("/fun");
+    }
+  if (req.body.list === "Weekend") {
+        weekendItems.push(item);
+        res.redirect("/weekend");
+    }
+  
 });
 
 // display default to do list on the localhost:3000/work route!
